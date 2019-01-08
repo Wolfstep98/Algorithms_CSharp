@@ -5,13 +5,13 @@ namespace Algorithms
 {
     namespace SortingAlgorithms
     {
-        public static class SelectionSort<T> where T : IComparable<T>
+        public static class Sort<T> where T : IComparable<T>
         {
             /// <summary>
             /// Sort the array using the Selection Sort Algorithms.
             /// </summary>
             /// <param name="array">The array to sort.</param>
-            public static void Sort(T[] array)
+            public static void SelectionSort(T[] array)
             {
                 if (array == null)
                     throw new NullReferenceException("The array you try to sort is referenced to null.");
@@ -30,6 +30,47 @@ namespace Algorithms
                     }
                     if (index != minIndex)
                         Swap(array, index, minIndex);    
+                }
+            }
+
+            /// <summary>
+            /// Sort the array using the Insertion Sort Algorithms.
+            /// </summary>
+            /// <param name="array">The array to sort.</param>
+            public static void InsertionSort(T[] array)
+            {
+                if (array == null)
+                    throw new NullReferenceException("The array you try to sort is referenced to null.");
+                if (array.Length == 0 || array.Length == 1)
+                    return;
+
+                for (int i = 0; i < array.Length; i++)
+                {
+                    T indexValue = array[i];
+                    int j = i - 1;
+                    while (j >= 0 && array[j].CompareTo(indexValue) == 1)
+                    {
+                        array[j + 1] = array[j];
+                        j--;
+                    }
+                    array[j + 1] = indexValue;
+                }
+            }
+
+            public static void BubbleSort(T[] array)
+            {
+                bool swapped = true;
+                while(swapped)
+                {
+                    swapped = false;
+                    for(int i = 0; i < array.Length - 1;i++)
+                    {
+                        if(array[i].CompareTo(array[i+1]) == -1)
+                        {
+                            if (!swapped) swapped = true;
+                            Swap(array, i, i + 1);
+                        }
+                    }
                 }
             }
 
