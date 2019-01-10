@@ -57,6 +57,10 @@ namespace Algorithms
                 }
             }
 
+            /// <summary>
+            /// Sort the array using the Bubble Sort Algorithms.
+            /// </summary>
+            /// <param name="array">The array to sort.</param>
             public static void BubbleSort(T[] array)
             {
                 bool swapped = true;
@@ -65,13 +69,22 @@ namespace Algorithms
                     swapped = false;
                     for(int i = 0; i < array.Length - 1;i++)
                     {
-                        if(array[i].CompareTo(array[i+1]) == -1)
+                        if(array[i].CompareTo(array[i+1]) == 1)
                         {
                             if (!swapped) swapped = true;
                             Swap(array, i, i + 1);
                         }
                     }
                 }
+            }
+
+            /// <summary>
+            /// Sort the array using the Shell Sort Algorithms.
+            /// </summary>
+            /// <param name="array">The array to sort.</param>
+            public static void SheelSort(T[] array)
+            {
+
             }
 
             /// <summary>
