@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Algortihms.Shuffle
+namespace Algorithms.Shuffle
 {
     public static class Shuffle<T>
     {
