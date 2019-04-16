@@ -10,7 +10,7 @@ namespace Algorithms
             /// <summary>
             /// Sort the array using the Selection Sort Algorithms.
             /// </summary>
-            /// <param name="array">The array to sort.</param>
+            /// <param Oname="array">The array to sort.</param>
             public static void SelectionSort(T[] array)
             {
                 if (array == null)
@@ -29,7 +29,7 @@ namespace Algorithms
                             minIndex = i;
                     }
                     if (index != minIndex)
-                        Swap(array, index, minIndex);    
+                        Swap(array, index, minIndex);
                 }
             }
 
